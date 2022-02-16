@@ -8,8 +8,7 @@ import { GameDetails } from "./GameDetails";
 export const WelcomePage = () => {
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
-    const handleClick = () => { 
-    }
+    
     return (
         <>
             <div className="welcomeCard">

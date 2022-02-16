@@ -18,8 +18,8 @@ export const ApplicationViews = () => {
     }}>
         <Routes>
             <Route exact path="/" element={<WelcomePage/>}/>
-            <Route path="/NewGame" element={<PlayerEntry/>}/>
-            <Route path="/GameSetup" element={<GameDetails/>}/>
+            <Route  path="/PlayerEntry" element={<PlayerEntry/>}/>
+            
         </Routes>
 
     </main>
