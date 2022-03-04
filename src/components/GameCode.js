@@ -16,36 +16,47 @@ export const GameCode = () => {
     const toggle = () => setModal(!modal)
     let navigate = useNavigate()
 
+
+
     useEffect(() => {
-        console.log(game[0])
-        if (game[0]?.host) {
-            setAllPlayers(game[0].players)
-            setUpdatedGame(game[0])
+        if (game?.host) {
+            setAllPlayers(game.players)
+            setUpdatedGame(game)
         }
     }, [game])
 
+
+
     const handleGameCodeInput = (event) => {
         setGameCode(event.target.value)
-
+        console.log(event.target.value)
     }
+
     const handlePlayerInput = (event) => {
         setGamePlayer(event.target.value)
     }
 
+
+
     const joinGameOnClick = () => {
         getGameByCode(gameCode)
-        // let players = allPlayers
-        setAllPlayers(game[0].players)
-        if (game[0]) {
-            allPlayers.push(gamePlayer)
-            updatedGame.players = allPlayers
-            updateGame(updatedGame)
+        if(game.players) {
+            setAllPlayers(game.players)
+        }
 
+
+        if (game) {
+            allPlayers.push(gamePlayer)
+            setUpdatedGame(game)
+            updatedGame.players = allPlayers
+            console.log(game)
+            updateGame(updatedGame)
             navigate(`/GameLobby/${gameCode}`)
         } else {
             console.log("no host?")
         }
     }
+    
 
     return (
         <>

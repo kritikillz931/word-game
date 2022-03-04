@@ -1,5 +1,7 @@
 import { Route, Router, Routes } from "react-router-dom"
-import { GameDetails } from "./components/GameDetails"
+import { GameCode } from "./components/GameCode"
+
+import { GameLobby } from "./components/GameLobby"
 
 import { WelcomePage } from "./components/welcomePage"
 
@@ -18,7 +20,7 @@ export const ApplicationViews = () => {
     }}>
         <Routes>
             <Route exact path="/" element={<WelcomePage/>}/>
-            {/* <Route  path="/Lobby" element={<Lobby/>}/> */}
+            <Route path={`/GameLobby/${GameCode}`} element={<GameLobby/>}/>
             
         </Routes>
 
